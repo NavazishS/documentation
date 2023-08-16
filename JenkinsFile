@@ -2,16 +2,19 @@ pipeline {
     agent {
         docker {
             image 'nawdocker/docker-curl:v1'
-            args '-e HOSTNAME=${HOSTNAME}'
+            args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
         }
     }
     stages {
-        stage('Print Hostname') {
+        stage('Build and Test') {
             steps {
                 script {
-                    echo "Hostname: ${env.HOSTNAME}"
-                }
+                    def jenkinsServerIp = 'host.docker.internal'
+                    echo "Jenkins Server IP: ${jenkinsServerIp}"
+
+                    }
             }
         }
+        // Add more stages as needed
     }
 }
