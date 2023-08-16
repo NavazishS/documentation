@@ -6,7 +6,7 @@ pipeline {
     }
   }
   environment {
-    HOST_IP = sh(script: "hostname -I | awk '{print \$1}'", returnStdout: true).trim()
+    HOST_IP = sh(script: "hostname -i | awk '{print \$1}'", returnStdout: true).trim()
   }
   stages {
     stage('Print Host IP') {
