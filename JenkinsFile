@@ -1,20 +1,18 @@
 pipeline {
-  agent {
-    docker {
-      image 'nawdocker/docker-curl:v1'
-      args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
-    }
-  }
-  environment {
-    HOST_IP = sh(script: "hostname -i | awk '{print \$1}'", returnStdout: true).trim()
-  }
-  stages {
-    stage('Print Host IP') {
-      steps {
-        script {
-          echo "Host IP: ${env.HOST_IP}"
+    agent {
+        docker {
+            image 'nawdocker/docker-curl:v1'
+            args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
         }
-      }
     }
-  }
+    stages {
+        stage('Get Host IP') {
+            steps {
+                script {
+                    def defaultGatewayIp = sh(script: "ip route | grep default | awk '{print \$3}'", returnStdout: true).trim()
+                    echo "Host IP: ${defaultGatewayIp}"
+                }
+            }
+        }
+    }
 }
