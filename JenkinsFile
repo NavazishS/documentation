@@ -2,15 +2,14 @@ pipeline {
     agent {
         docker {
             image 'nawdocker/docker-curl:v1'
-            args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
+            args '-e HOSTNAME=${HOSTNAME}'
         }
     }
     stages {
-        stage('Get Host IP') {
+        stage('Print Hostname') {
             steps {
                 script {
-                    def defaultGatewayIp = sh(script: "ip route | grep default | awk '{print \$3}'", returnStdout: true).trim()
-                    echo "Host IP: ${defaultGatewayIp}"
+                    echo "Hostname: ${env.HOSTNAME}"
                 }
             }
         }
