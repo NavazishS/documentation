@@ -3,7 +3,10 @@ This repository demonstrates a GitOps-style CI/CD pipeline for deploying a Pytho
 ## Table of Contents
 
 - [Pipeline Stages](#PipelineStages)
-- [Instructions](#Instructions)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Instructions](#Instructions)
+
 
 ## Pipeline Stages
 
@@ -34,7 +37,14 @@ This repository demonstrates a GitOps-style CI/CD pipeline for deploying a Pytho
 1. ArgoCD watches for changes in the Git repository.
 2. When the Docker image changes are updated to the deployment manifest file, ArgoCD deploys the new version to Minikube.
 
-## Instructions
+## Getting Started
+
+### Prerequisites
+
+- Jenkins Host (AWS EC2)
+- ArgoCD
+- Minikube
+### Instructions
 
 1. **Clone this repository:**
 
