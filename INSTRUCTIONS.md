@@ -1,7 +1,9 @@
-# GitOps CI/CD Pipeline for Python Application deployment using Jenkins, ArgoCD, and Minikube.
-
 This repository demonstrates a GitOps-style CI/CD pipeline for deploying a Python-based application using Jenkins, ArgoCD, and Minikube. The pipeline automates the build, test, and deployment process in a Kubernetes environment.
 
+## Table of Contents
+
+- [Pipeline Stages](#Pipeline Stages)
+- [Instructions](#Instructions)
 
 ## Pipeline Stages
 
@@ -30,7 +32,7 @@ This repository demonstrates a GitOps-style CI/CD pipeline for deploying a Pytho
 ### GitOps Deployment
 
 1. ArgoCD watches for changes in the Git repository.
-2. When the Docker image changes, ArgoCD deploys the new version to Minikube.
+2. When the Docker image changes are updated to the deployment manifest file, ArgoCD deploys the new version to Minikube.
 
 ## Instructions
 
@@ -55,7 +57,7 @@ This repository demonstrates a GitOps-style CI/CD pipeline for deploying a Pytho
   - 2.4 Update GIT_USER_NAME  with your github username 
 
 
-3. **Run the Pipeline:*
+3. **Run the Pipeline:**
 
   - 3.1 Make changes to the source code and push them to the Git repository.
   - 3.2 Observe the pipeline stages running automatically.
