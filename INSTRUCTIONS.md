@@ -41,15 +41,15 @@ This repository demonstrates a GitOps-style CI/CD pipeline for deploying a Pytho
    cd python-app
 2. **Update JenkinsFile:**
  
-2.1 Add your actual Jenkins host IP in the below line
+- 2.1 Add your actual Jenkins host IP in the below line
     ```bash
     CURL_OUTPUT=$(curl -s http://<Jenkins_Host_IP>:8081)
-2.2 Add Dockerhub credentials as Type='Username and password', Id='docker-cred', Username=<YOUR_DOCKERHUB_USERNAME>, Password=<YOUR_DOCKERHUB_PASSWORD> 
-2.3 Add Github credentials as Type='Secret text', Id='jenkins-github', Secret=<YOUR_GITHUB_PAT_TOKEN_WITH_REQUIRED_ACCESS>
-2.4 Update GIT_USER_NAME  with your github username 
+- 2.2 Add Dockerhub credentials as ```bash Type='Username and password', Id='docker-cred', Username=<YOUR_DOCKERHUB_USERNAME>, Password=<YOUR_DOCKERHUB_PASSWORD> 
+- 2.3 Add Github credentials as ```yaml Type='Secret text', Id='jenkins-github', Secret=<YOUR_GITHUB_PAT_TOKEN_WITH_REQUIRED_ACCESS>
+- 2.4 Update GIT_USER_NAME  with your github username 
 
 
 3. **Run the Pipeline:*
 
-3.1 Make changes to the source code and push them to the Git repository.
-3.2 Observe the pipeline stages running automatically.
+- 3.1 Make changes to the source code and push them to the Git repository.
+- 3.2 Observe the pipeline stages running automatically.
