@@ -2,7 +2,7 @@ This repository demonstrates a GitOps-style CI/CD pipeline for deploying a Pytho
 
 ## Table of Contents
 
-- [Pipeline Stages](#Pipeline Stages)
+- [Pipeline Stages](#PipelineStages)
 - [Instructions](#Instructions)
 
 ## Pipeline Stages
