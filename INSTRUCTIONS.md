@@ -72,4 +72,4 @@ This repository demonstrates a GitOps-style CI/CD pipeline for deploying a Pytho
   - 3.1 Make changes to the source code and push them to the Git repository.
   - 3.2 Observe the pipeline stages running automatically.
 
-Congratulations! Now you can access your web service on ´curl http://<ip-address>:8081´
+Congratulations! Now you can access your web service result with `curl http://<ip-address>:8081`
