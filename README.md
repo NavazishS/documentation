@@ -1,5 +1,5 @@
 # GitOps CI/CD Pipeline for Python Application deployment using Jenkins, ArgoCD, and Minikube.
-
+![Technical Diagrams (2)](https://github.com/NavazishS/test/assets/72895399/b765bb31-d997-4249-8df2-4f711ddf61fc)
 ## Prerequisites
 
 - Jenkins Host (AWS EC2)
