@@ -22,16 +22,15 @@ You can use a combination of AWS, Minikube, and Python to deploy The Responding 
    2.2 Add a Jenkinsfile to the Git repository to define the pipeline stages.
 
 3. Define the pipeline stages:
-    - Stage 1: Checkout the source code from Git by initiating Jenkins' build using a Docker agent.
-    - Stage 2:
-        - Subpoint 2.a: Copy your Python code and any required dependencies using a Dockerfile as shown in the repository (link).
-        - Subpoint 2.b: Build the Docker image with Dockerfile and run the container in a detached mode, exposing its application to the host IP on port 8081.
-        - Subpoint 2.c: Run unit tests with 'curl:<jenkins-host-ip:8081>'
-    - Stage 3: Run SonarQube analysis to check the code quality (Not configured in the current solution).
-    - Stage 4: Build and Push the Image to the Docker Hub or JFrog repositories or ACR.
-    - Stage 5: Run user acceptance tests on the deployed application (Not configured for the current application).
-    - Stage 6: Updating Python application deployment with the latest tag.
-    - Stage 7: Promote the application to a Minikube Kubernetes environment using Argo CD.
+    Stage 1: Checkout the source code from Git by initiating Jenkins' build using a Docker agent.
+    Stage 2.a: Copy your Python code and any required dependencies using a Dockerfile as shown in the repository (link).
+    Stage 2.b: Build the Docker image with Dockerfile and run the container in a detached mode, exposing its application to the host IP on port 8081.
+    Stage 2.c: Run unit tests with 'curl:<jenkins-host-ip:8081>'
+    Stage 3: Run SonarQube analysis to check the code quality (Not configured in the current solution).
+    Stage 4: Build and Push the Image to the Docker Hub or JFrog repositories or ACR.
+    Stage 5: Run user acceptance tests on the deployed application (Not configured for the current application).
+    Stage 6: Updating Python application deployment with the latest tag.
+    Stage 7: Promote the application to a Minikube Kubernetes environment using Argo CD.
 	
 4. Install Minikube on EC2:
    1. SSH into the EC2 instance and install Minikube.
@@ -48,3 +47,5 @@ You can use a combination of AWS, Minikube, and Python to deploy The Responding 
 7. Run the Jenkins pipeline:
    7.1 Trigger the Jenkins pipeline to start the CI/CD process for the Java application.
    7.2 Monitor the pipeline stages and fix any issues that arise.
+
+
